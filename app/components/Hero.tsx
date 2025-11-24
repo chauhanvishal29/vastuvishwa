@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function Hero(): JSX.Element {
+export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center">
 

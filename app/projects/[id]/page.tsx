@@ -5,7 +5,7 @@ import { projectData, ProjectType } from "@/app/data/projects";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function ProjectDetails(): JSX.Element {
+export default function ProjectDetails() {
   const { id } = useParams();
   const project: ProjectType | undefined = projectData.find(
     (item) => item.id.toString() === id

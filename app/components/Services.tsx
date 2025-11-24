@@ -24,7 +24,7 @@ const services = [
   },
 ];
 
-export default function Services(): JSX.Element {
+export default function Services() {
   return (
     <section className="py-24 bg-gray-100" id="services">
       <div className="max-w-7xl mx-auto px-6">

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { PiMapPin, PiPhone, PiEnvelope } from "react-icons/pi";
 
-export default function Contact(): JSX.Element {
+export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">

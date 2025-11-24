@@ -30,7 +30,7 @@ const steps = [
   },
 ];
 
-export default function Process(): JSX.Element {
+export default function Process() {
   return (
     <section className="py-24 bg-white" id="process">
       <div className="max-w-6xl mx-auto px-6">

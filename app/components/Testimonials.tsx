@@ -24,7 +24,7 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials(): JSX.Element {
+export default function Testimonials(){
   return (
     <section className="py-24 bg-gray-100" id="testimonials">
       <div className="max-w-7xl mx-auto px-6">
