@@ -2,29 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const projects = [
-  {
-    id: 1,
-    title: "Modern Villa — 2024",
-    img: "/projects/project1.jpg",
-  },
-  {
-    id: 2,
-    title: "Corporate Office Interior",
-    img: "/projects/project2.jpg",
-  },
-  {
-    id: 3,
-    title: "Luxury Bungalow Design",
-    img: "/projects/project3.jpg",
-  },
-  {
-    id: 4,
-    title: "Urban Apartment Concept",
-    img: "/projects/project4.jpg",
-  },
-];
+import Link from "next/link";
+import { projectData } from "@/app/data/projects";
 
 export default function Projects() {
   return (
@@ -41,28 +20,44 @@ export default function Projects() {
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projectData.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
             >
-              <Image
-                src={project.img}
-                alt={project.title}
-                width={500}
-                height={500}
-                className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+              <Link
+                href={`/projects/${project.id}`}
+                className="group relative block overflow-hidden rounded-xl shadow-lg bg-gray-900"
+              >
+                <Image
+                  src={project.hero}
+                  alt={project.title}
+                  width={500}
+                  height={500}
+                  className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end">
-                <p className="text-white text-lg font-semibold p-4">
-                  {project.title}
-                </p>
-              </div>
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500 flex flex-col justify-end p-4">
+                  <p className="text-sm text-gray-300 uppercase tracking-wide mb-1">
+                    {project.category} · {project.year}
+                  </p>
+                  <h3 className="text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-200 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <span className="mt-3 inline-flex items-center text-sm font-medium text-amber-300">
+                    View project
+                    <span className="ml-1 transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

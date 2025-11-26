@@ -7,6 +7,8 @@ export interface ProjectType {
   location: string;
   size: string;
   category: string;
+  client?: string;
+  status?: string;
   images: string[];
 }
 
@@ -21,6 +23,8 @@ export const projectData: ProjectType[] = [
     location: "Ahmedabad, India",
     size: "6500 sq.ft",
     category: "Residential",
+    client: "Private Client",
+    status: "Completed",
     images: ["/p1.jpg", "/p2.jpg", "/p3.jpg"],
   },
   {
@@ -33,6 +37,8 @@ export const projectData: ProjectType[] = [
     location: "Mumbai, India",
     size: "18,000 sq.ft",
     category: "Commercial",
+    client: "Confidential Corporate Client",
+    status: "In Design",
     images: ["/p3.jpg", "/p4.jpg", "/p5.jpg"],
   },
 ];

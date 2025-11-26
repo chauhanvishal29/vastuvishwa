@@ -1,7 +1,6 @@
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import PortfolioGrid from "./components/PortfolioGrid";
+import Projects from "./components/Projects";
 import Process from "./components/Process";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
@@ -9,8 +8,8 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <PortfolioGrid />
+      {/* Projects-first layout inspired by BIG (big.dk), without a hero banner */}
+      <Projects />
       <Services />
       <Process />
       <Testimonials />
